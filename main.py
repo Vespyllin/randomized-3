@@ -1,4 +1,5 @@
 import random
+import statistics
 
 def compute_optimal_prices(n, k):
     # Initialize tables
@@ -30,27 +31,15 @@ def compute_optimal_prices(n, k):
     
     return P
 
-
-def get_optimal_price(c,t):
-    return optimal_prices[c][t]
-
-def get_basic_price():
-    return 1 - K/N
-
-N = 10
-K = 4
-
-optimal_prices = compute_optimal_prices(N,K)
-
-def simulate_purchases(basic):
+def simulate_purchases(n, k, optimal_prices = None):
     total_revenue = 0
-    remaining_tickets = K
+    remaining_tickets = k
     
-    for customer in range(0, N):
+    for customer in range(0, n):
         if remaining_tickets == 0:
             break  # No tickets left
         
-        p = get_basic_price() if basic else get_optimal_price(customer, remaining_tickets)
+        p = (1 - k/n) if not optimal_prices else optimal_prices[customer][remaining_tickets]
         
         cust_val = random.uniform(0, 1)
         
@@ -61,10 +50,56 @@ def simulate_purchases(basic):
     
     return total_revenue
 
-breakeven = 0
-for i in range(10000):
-    basic = simulate_purchases(True)
-    optimal = simulate_purchases(False)
-    breakeven = breakeven + (1 if basic > optimal else -1)
+def print_statistics(basic_revenues, optimal_revenues, diff, n, k):
+    print(f"=== Statistics for N={n}, K={k} ===")
+    print("Basic Pricing Strategy:")
+    print(f"  Avg Revenue: {statistics.mean(basic_revenues):.4f}")
+    print(f"  Std Dev: {statistics.stdev(basic_revenues):.4f}")
+    print(f"  Min: {min(basic_revenues):.4f}")
+    print(f"  Max: {max(basic_revenues):.4f}")
+    
+    print("\nOptimal Pricing Strategy:")
+    print(f"  Avg Revenue: {statistics.mean(optimal_revenues):.4f}")
+    print(f"  Std Dev: {statistics.stdev(optimal_revenues):.4f}")
+    print(f"  Min: {min(optimal_revenues):.4f}")
+    print(f"  Max: {max(optimal_revenues):.4f}")
+    
+    print("\nComparison:")
+    print(f"  Avg Improvement: {statistics.mean(diff):.4f}")
+    print(f"  Improvement %: {statistics.mean(diff)/statistics.mean(basic_revenues)*100:.2f}%")
+    print(f"  Optimal better: {sum(i > 0 for i in diff)/len(diff)*100:.2f}% of cases")
+    print(f"  Basic better: {sum(i < 0 for i in diff)/len(diff)*100:.2f}% of cases\n")
 
-print(breakeven)
+def run_simulations(num_simulations, n, k):
+    optimal_prices = compute_optimal_prices(n,k)
+
+    basic_revenues = []
+    optimal_revenues = []
+    diff = []
+    
+    for _ in range(num_simulations):
+        basic_rev = simulate_purchases(n, k)
+        optimal_rev = simulate_purchases(n, k, optimal_prices)
+        
+        basic_revenues.append(basic_rev)
+        optimal_revenues.append(optimal_rev)
+        diff.append(optimal_rev - basic_rev)
+    
+    return basic_revenues, optimal_revenues, diff
+
+test_cases = [
+    (10, 2),
+    (10, 5),  
+    (100, 10),
+    (100, 50),
+    (500, 50),
+    (500, 200),
+    (1000, 50),
+    (1000, 400),
+]
+
+ITER = 1000
+
+for n, k in test_cases:
+    basic, optimal, diff = run_simulations(ITER, n, k)
+    print_statistics(basic, optimal, diff, n, k)
