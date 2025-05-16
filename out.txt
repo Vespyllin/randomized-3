@@ -1,0 +1,304 @@
+=== Statistics for N=10, K=1 ===
+Basic Pricing Strategy:
+  Avg Revenue: 0.5931
+  Std Dev: 0.4269
+  Min: 0.0000
+  Max: 0.9000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 0.7457
+  Std Dev: 0.1880
+  Min: 0.0000
+  Max: 0.8611
+
+Comparison:
+  Avg Improvement: 0.1526
+  Improvement %: 25.74%
+  Optimal better: 32.80% of cases
+  Basic better: 65.90% of cases
+
+=== Statistics for N=10, K=5 ===
+Basic Pricing Strategy:
+  Avg Revenue: 2.2085
+  Std Dev: 0.4466
+  Min: 0.0000
+  Max: 2.5000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 2.3279
+  Std Dev: 0.6476
+  Min: 0.0000
+  Max: 3.3714
+
+Comparison:
+  Avg Improvement: 0.1194
+  Improvement %: 5.41%
+  Optimal better: 59.20% of cases
+  Basic better: 40.60% of cases
+
+=== Statistics for N=10, K=7 ===
+Basic Pricing Strategy:
+  Avg Revenue: 1.9395
+  Std Dev: 0.2645
+  Min: 0.6000
+  Max: 2.1000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 2.4646
+  Std Dev: 0.7914
+  Min: 0.0000
+  Max: 4.0839
+
+Comparison:
+  Avg Improvement: 0.5251
+  Improvement %: 27.07%
+  Optimal better: 68.60% of cases
+  Basic better: 31.40% of cases
+
+=== Statistics for N=10, K=9 ===
+Basic Pricing Strategy:
+  Avg Revenue: 0.8652
+  Std Dev: 0.0632
+  Min: 0.6000
+  Max: 0.9000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 2.4953
+  Std Dev: 0.7866
+  Min: 0.0000
+  Max: 4.7301
+
+Comparison:
+  Avg Improvement: 1.6301
+  Improvement %: 188.41%
+  Optimal better: 99.20% of cases
+  Basic better: 0.80% of cases
+
+=== Statistics for N=100, K=10 ===
+Basic Pricing Strategy:
+  Avg Revenue: 7.8912
+  Std Dev: 1.5503
+  Min: 0.9000
+  Max: 9.0000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 8.6563
+  Std Dev: 0.4136
+  Min: 6.5951
+  Max: 9.2365
+
+Comparison:
+  Avg Improvement: 0.7651
+  Improvement %: 9.70%
+  Optimal better: 52.40% of cases
+  Basic better: 47.60% of cases
+
+=== Statistics for N=100, K=50 ===
+Basic Pricing Strategy:
+  Avg Revenue: 24.0370
+  Std Dev: 1.4262
+  Min: 17.5000
+  Max: 25.0000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 24.7919
+  Std Dev: 2.3146
+  Min: 17.1720
+  Max: 29.9353
+
+Comparison:
+  Avg Improvement: 0.7549
+  Improvement %: 3.14%
+  Optimal better: 62.00% of cases
+  Basic better: 38.00% of cases
+
+=== Statistics for N=100, K=70 ===
+Basic Pricing Strategy:
+  Avg Revenue: 20.4654
+  Std Dev: 0.7680
+  Min: 17.1000
+  Max: 21.0000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 25.0486
+  Std Dev: 2.5009
+  Min: 16.5000
+  Max: 32.5003
+
+Comparison:
+  Avg Improvement: 4.5832
+  Improvement %: 22.39%
+  Optimal better: 96.90% of cases
+  Basic better: 3.10% of cases
+
+=== Statistics for N=100, K=90 ===
+Basic Pricing Strategy:
+  Avg Revenue: 8.8891
+  Std Dev: 0.1696
+  Min: 8.0000
+  Max: 9.0000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 24.9115
+  Std Dev: 2.4146
+  Min: 17.0000
+  Max: 32.5000
+
+Comparison:
+  Avg Improvement: 16.0224
+  Improvement %: 180.25%
+  Optimal better: 100.00% of cases
+  Basic better: 0.00% of cases
+
+=== Statistics for N=500, K=50 ===
+Basic Pricing Strategy:
+  Avg Revenue: 42.6816
+  Std Dev: 3.4531
+  Min: 25.2000
+  Max: 45.0000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 44.5349
+  Std Dev: 0.7538
+  Min: 39.8056
+  Max: 46.0452
+
+Comparison:
+  Avg Improvement: 1.8533
+  Improvement %: 4.34%
+  Optimal better: 58.20% of cases
+  Basic better: 41.80% of cases
+
+=== Statistics for N=500, K=250 ===
+Basic Pricing Strategy:
+  Avg Revenue: 122.8045
+  Std Dev: 3.3192
+  Min: 109.0000
+  Max: 125.0000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 124.7706
+  Std Dev: 5.3788
+  Min: 103.7971
+  Max: 138.9691
+
+Comparison:
+  Avg Improvement: 1.9661
+  Improvement %: 1.60%
+  Optimal better: 63.20% of cases
+  Basic better: 36.80% of cases
+
+=== Statistics for N=500, K=350 ===
+Basic Pricing Strategy:
+  Avg Revenue: 103.7877
+  Std Dev: 1.8056
+  Min: 93.6000
+  Max: 105.0000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 125.1475
+  Std Dev: 5.5589
+  Min: 108.5000
+  Max: 143.5000
+
+Comparison:
+  Avg Improvement: 21.3598
+  Improvement %: 20.58%
+  Optimal better: 100.00% of cases
+  Basic better: 0.00% of cases
+
+=== Statistics for N=500, K=450 ===
+Basic Pricing Strategy:
+  Avg Revenue: 44.7230
+  Std Dev: 0.4223
+  Min: 43.0000
+  Max: 45.0000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 125.0910
+  Std Dev: 5.4919
+  Min: 108.0000
+  Max: 141.0000
+
+Comparison:
+  Avg Improvement: 80.3680
+  Improvement %: 179.70%
+  Optimal better: 100.00% of cases
+  Basic better: 0.00% of cases
+
+=== Statistics for N=1000, K=100 ===
+Basic Pricing Strategy:
+  Avg Revenue: 86.5935
+  Std Dev: 4.7612
+  Min: 65.7000
+  Max: 90.0000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 89.4981
+  Std Dev: 1.0049
+  Min: 83.3672
+  Max: 91.6814
+
+Comparison:
+  Avg Improvement: 2.9046
+  Improvement %: 3.35%
+  Optimal better: 65.70% of cases
+  Basic better: 34.30% of cases
+
+=== Statistics for N=1000, K=500 ===
+Basic Pricing Strategy:
+  Avg Revenue: 246.8565
+  Std Dev: 4.4827
+  Min: 224.5000
+  Max: 250.0000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 249.8110
+  Std Dev: 7.6226
+  Min: 224.1099
+  Max: 274.1575
+
+Comparison:
+  Avg Improvement: 2.9545
+  Improvement %: 1.20%
+  Optimal better: 62.00% of cases
+  Basic better: 38.00% of cases
+
+=== Statistics for N=1000, K=700 ===
+Basic Pricing Strategy:
+  Avg Revenue: 208.2297
+  Std Dev: 2.6166
+  Min: 197.7000
+  Max: 210.0000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 249.9935
+  Std Dev: 7.9533
+  Min: 224.5000
+  Max: 276.0000
+
+Comparison:
+  Avg Improvement: 41.7638
+  Improvement %: 20.06%
+  Optimal better: 100.00% of cases
+  Basic better: 0.00% of cases
+
+=== Statistics for N=1000, K=900 ===
+Basic Pricing Strategy:
+  Avg Revenue: 89.6286
+  Std Dev: 0.5573
+  Min: 87.0000
+  Max: 90.0000
+
+Optimal Pricing Strategy:
+  Avg Revenue: 250.0840
+  Std Dev: 7.9255
+  Min: 227.0000
+  Max: 277.5000
+
+Comparison:
+  Avg Improvement: 160.4554
+  Improvement %: 179.02%
+  Optimal better: 100.00% of cases
+  Basic better: 0.00% of cases
+

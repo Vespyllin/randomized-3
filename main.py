@@ -1,5 +1,7 @@
 import random
 import statistics
+import matplotlib.pyplot as plt
+
 
 def compute_optimal_prices(n, k):
     # Initialize tables
@@ -88,14 +90,122 @@ def run_simulations(num_simulations, n, k):
     return basic_revenues, optimal_revenues, diff
 
 test_cases = [
-    (10, 2),
-    (10, 5),  
     (100, 10),
+    (100, 25),
     (100, 50),
+    (100, 70),
+    (100, 90),
     (500, 50),
-    (500, 200),
-    (1000, 50),
-    (1000, 400),
+    (500, 125),
+    (500, 250),
+    (500, 350),
+    (500, 450),
+    (750, 75),
+    (750, 187),
+    (750, 375),
+    (750, 525),
+    (750, 675),
+    (1000, 100),
+    (1000, 250),
+    (1000, 500),
+    (1000, 700),
+    (1000, 900),
+]
+
+ITER = 1000
+import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
+import numpy as np
+
+# Extended test cases for 10%, 25%, 50%, 75%, 90% availability
+test_cases = [
+    # N=100 cases
+    (100, 10), (100, 25), (100, 50), (100, 75), (100, 90),
+    # N=1000 cases 
+    (1000, 100), (1000, 250), (1000, 500), (1000, 750), (1000, 900)
+]
+
+# Beautiful color schemes
+def generate_plot(n_value):
+    plt.figure(figsize=(14, 8))
+    
+    cases = [(n,k) for n,k in test_cases if n == n_value]
+    availability_labels = ['10%', '25%', '50%', '75%', '90%']
+    
+    for idx, (n, k) in enumerate(cases):
+        optimal_prices = compute_optimal_prices(n, k)
+        basic_revenues = []
+        optimal_revenues = []
+        
+        for _ in range(ITER):
+            basic_revenues.append(simulate_purchases(n, k))
+            optimal_revenues.append(simulate_purchases(n, k, optimal_prices))
+        
+        # Plot with more transparency (alpha=1)
+        plt.scatter([idx]*ITER, basic_revenues, 
+                   color='blue',
+                   alpha=0.5,  # Changed to more transparent
+                   marker='o',
+                   s=50,
+                   edgecolor='white',
+                   linewidth=0.5,
+                   label='Basic' if idx == 0 else None)
+        
+        plt.scatter([idx]*ITER, optimal_revenues, 
+                   color='green',
+                   alpha=0.5,  # Changed to more transparent
+                   marker='o',
+                   s=50,
+                   edgecolor='white',
+                   linewidth=0.5,
+                   label='Optimal' if idx == 0 else None)
+    
+    # Rest of your plotting code remains the same...
+        
+        # Customize plot
+    plt.xticks(range(len(cases)), availability_labels)
+    plt.xlabel('Ticket Availability (K/N)', fontsize=12)
+    plt.ylabel('Revenue', fontsize=12)
+    plt.title(f'Revenue Distribution Comparison (N={n_value})', fontsize=14)
+    
+    # Add grid and legend
+    plt.grid(True, alpha=0.5, linestyle='--')
+    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+    
+    # Add light background for each availability group
+    # for i in range(len(cases)):
+    #     plt.axvspan(i-0.5, i+0.5, facecolor='#F5F5F5', alpha=0.3)
+    
+    plt.tight_layout()
+    plt.savefig(f'revenue_comparison_N{n_value}.png', dpi=300, bbox_inches='tight')
+    print(f"Plot for N={n_value} saved as revenue_comparison_N{n_value}.png")
+
+# Generate both plots
+generate_plot(100)
+generate_plot(1000)
+
+
+test_cases = [
+    (100, 10),
+    (100, 25),
+    (100, 50),
+    (100, 70),
+    (100, 90),
+    (500, 50),
+    (500, 125),
+    (500, 250),
+    (500, 350),
+    (500, 450),
+    (750, 75),
+    (750, 187),
+    (750, 375),
+    (750, 525),
+    (750, 675),
+    (1000, 100),
+    (1000, 250),
+    (1000, 500),
+    (1000, 700),
+    (1000, 900),
 ]
 
 ITER = 1000
